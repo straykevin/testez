@@ -47,7 +47,7 @@ function TestRunner.runPlan(plan)
 	return session:finalize()
 end
 
---[[
+--[[ 
 	Run the given test plan node and its descendants, using the given test
 	session to store all of the results.
 ]]
@@ -103,6 +103,8 @@ function TestRunner.runPlanNode(session, planNode, lifecycleHooks)
 	end
 
 	local function runNode(childPlanNode)
+		print(`Running test: '{childPlanNode.phrase}'`)
+
 		-- Errors can be set either via `error` propagating upwards or
 		-- by a test calling fail([message]).
 
